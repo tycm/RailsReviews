@@ -2,15 +2,10 @@
   <strong>Title:</strong>
   <%= @movie.title %>
 </p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @movie.text %>
-</p>
-<h2>Comments</h2>
-<%= render @movie.comments %>
 
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+<h2>Reviews</h2>
+
+<h2>Add a Review:</h2>
+
 
 <%= link_to 'Movies List', movies_path %>

@@ -32,11 +32,11 @@ class MoviesController < ApplicationController
     def destroy
         @movie = Movie.find(params[:id])
         @movie.destroy
-        redirect_to articles_path
+        redirect_to movies_path
     end
 end
 
 private 
-    def article_params
-        params.require(:article).permit(:title, :text)
+    def movie_params
+        params.require(:movie).permit(:title)
     end

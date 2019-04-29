@@ -1,0 +1,19 @@
+<%= form_with(scope: :session, url: login_path, local: true) do |form| %>
+  <div class="danger">
+    <%= flash[:danger] %>
+  </div>
+
+  <div class="actions">
+  <h1>Login</h1>
+    <%= form.label :email %> 
+    <%= form.email_field :email, :type => "email", :class => "form-control" %> 
+
+    <%= form.label :password %>
+    <%= form.password_field :password, :type => "password", :class => "form-control mb-2" %>
+    <div class="text-right">
+    <%= form.submit "Log in", :class => "btn btn-success mb-1"%>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to 'Sign up', new_user_path, :class => "btn btn-info" %>

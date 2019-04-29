@@ -3,6 +3,7 @@
 
 <%= link_to 'New movie', new_movie_path, :class => "btn btn-primary my-2 ml-auto" %>
 <br>
+
   <% @movies.each do |movie| %>
     <div class="card mr-3 mb-3 ml-3" style="width: 18rem;">
       <%= image_tag("aveng.jpg", :class => "card-img-top")%>
@@ -15,5 +16,8 @@
                     method: :delete,
                     data: { confirm: 'Are you sure?' } %>
       </div>
+      <div class="card-footer">
+      <small class="text-muted">Last updated <%= distance_of_time_in_words(Time.now, movie.updated_at)%> ago</small>
+    </div>
     </div>
   <% end %>

@@ -1,5 +1,7 @@
 
-<h1><%= @movie.title %> </h1>
+<h1><%= @movie.title %> <% @movie.reviews.average(:rating).to_i.times do  %>
+     ⭐️
+  <% end %></h1>
 
 
 <div class="card mb-3">

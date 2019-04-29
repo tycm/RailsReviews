@@ -3,7 +3,7 @@
   <strong>Title:</strong>
   <%= @movie.title %>
 </p>
- 
+
 <p>
   <strong>Text:</strong>
   <%= @movie.text %>
@@ -15,8 +15,9 @@
 <h2>Add a review:</h2>
 <%= render 'reviews/form' %>
 
-<%= link_to 'Edit', edit_movie_path(@movie) %>
-<%= link_to 'Back', movies_path %>
-<td><%= link_to 'Destroy', movie_path(@movie),
+<%= link_to 'Edit', edit_movie_path(@movie), :class =>"btn btn-warning" %>
+<%= link_to 'Destroy', movie_path(@movie), :class => "btn btn-danger",
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', movies_path, :class => "btn btn-info"%>
+

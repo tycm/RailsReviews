@@ -1,5 +1,6 @@
 require 'rails_helper.rb'
 
+#rspec test
 feature "Staff adds a movie and someone reviews that movie" do
 	scenario "Staff succesfully creates a new movie" do
 		visit new_movie_path

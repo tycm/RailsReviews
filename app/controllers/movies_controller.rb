@@ -43,5 +43,5 @@ end
 
 private
 	def movie_params
-		params.require(:movie).permit(:title, :text, :rating)
+		params.require(:movie).permit(:title, :text, :rating, :image)
 	end

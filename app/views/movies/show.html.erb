@@ -2,6 +2,15 @@
 <h1><%= @movie.title %> </h1>
 
 
+<div class="card mb-3">
+  <%if @movie.image %>
+    <div class="container" style="width: 100%;">
+      <%= image_tag(@movie.image, :class => "card-img-top" ) %>
+      </div>
+    <% else %>
+    <%end%>
+</div>
+
 <p>
   <%= @movie.text %>
 </p>

@@ -6,7 +6,11 @@
 
   <% @movies.each do |movie| %>
     <div class="card mr-3 mb-3 ml-3" style="width: 18rem;">
-      <%= image_tag("aveng.jpg", :class => "card-img-top")%>
+    <%if movie.image %>
+      <%= image_tag(movie.image, :class => "card-img-top")%>
+    <% else %>
+    <%= image_tag("nia.png", :class => "card-img-top")%>
+    <% end %>
       <div class="card-body">
         <h5 class="card-title"><%= movie.title %></h5>
         <p class="card-text"><%= movie.text %></p>

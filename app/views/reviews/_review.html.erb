@@ -1,16 +1,14 @@
-
-<p>
-  <strong>Reviewer:</strong>
-  <%= review.commenter %>
-</p>
- 
-<p>
-  <strong>Review:</strong>
-  <%= review.body %>
-</p>
-
-<p>
-  <%= link_to 'Destroy Review', [review.movie, review],
+<div class="media mb-2">
+  <%= image_tag("user.png", :class => "mr-3")%>
+  <div class="media-body">
+    <h5 class="mt-0"><%= review.commenter %></h5>
+    <%= review.body %>
+  </div>
+  <%= link_to 'Delete', [review.movie, review], :class => "btn btn-outline-danger",
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
-</p>
+</div>
+
+  
+
+

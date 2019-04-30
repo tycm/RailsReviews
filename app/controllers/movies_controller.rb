@@ -23,6 +23,14 @@ class MoviesController < ApplicationController
 		end
 	end
 
+	def search  
+		if params[:search].blank?  
+			redirect_to(root_path, alert: "Empty field!") and return  
+		else  
+		@parameter = params[:search].downcase  
+		@results = Movie.all.where("lower(title) LIKE :search", search: "%#{@parameter}%")  
+		end  
+	end
 
 	def destroy
 		@movie = Movie.find(params[:id])

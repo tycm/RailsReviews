@@ -21,10 +21,17 @@
             <ul class="navbar-nav mr-auto">
 
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+
+            <%= form_tag(search_page_path, :method => "get",   
+                                            class: "form-inline my-2 my-lg-0") do %>  
+            <div class="input-group">  
+              <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control mr-sm-2" %>  
+              <div class="input-group-btn">  
+                <%= button_tag "Search", :class => "btn btn-outline-success my-2 my-sm-0",:name => nil%>  
+              </div>  
+            </div>  
+          <% end %>
+
               <% if current_user %>
                 <%= link_to current_user.name, user_path(current_user), :class => "ml-4 mr-4" %>
                 <%= link_to 'Log out', logout_path, method: :delete, :class => "btn btn-outline-danger ml-2"%>

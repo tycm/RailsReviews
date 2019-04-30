@@ -1,0 +1,30 @@
+
+<h1>Listing movies</h1>
+
+<br>
+
+  <% @results.each do |movie| %>
+    <div class="card mr-3 mb-3 ml-3" style="width: 18rem;">
+    <%if movie.image %>
+      <%= image_tag(movie.image, :class => "card-img-top")%>
+    <% else %>
+    <%= image_tag("nia.png", :class => "card-img-top")%>
+    <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= movie.title %></h5>
+        <p><% movie.reviews.average(:rating).to_i.times do  %>
+     ⭐️
+  <% end %></p>
+        <p class="card-text"><%= movie.text %> </p>
+
+        <%= link_to 'Show', movie_path(movie), :class => "btn btn-info" %>
+        <%= link_to 'Edit', edit_movie_path(movie), :class => "btn btn-warning" %>
+        <%= link_to 'Destroy', movie_path(movie), :class => "btn btn-danger",
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+      </div>
+      <div class="card-footer">
+      <small class="text-muted">Last updated <%= distance_of_time_in_words(Time.now, movie.updated_at)%> ago</small>
+    </div>
+    </div>
+  <% end %>

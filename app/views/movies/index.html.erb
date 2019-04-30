@@ -12,9 +12,10 @@
     <%= image_tag("nia.png", :class => "card-img-top")%>
     <% end %>
       <div class="card-body">
-        <h5 class="card-title"><%= movie.title %><% movie.reviews.average(:rating).to_i.times do  %>
+        <h5 class="card-title"><%= movie.title %></h5>
+        <p><% movie.reviews.average(:rating).to_i.times do  %>
      ⭐️
-  <% end %></h5>
+  <% end %></p>
         <p class="card-text"><%= movie.text %> </p>
 
         <%= link_to 'Show', movie_path(movie), :class => "btn btn-info" %>

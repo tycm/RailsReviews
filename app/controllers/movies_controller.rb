@@ -4,6 +4,8 @@ class MoviesController < ApplicationController
 	end
 	def show
 		@movie = Movie.find(params[:id])
+		@average = @movie.reviews.average(:rating)
+		@remain = 5 - @average.floor;
 	end
 	def new
 		@movie = Movie.new

@@ -7,6 +7,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
   </head>
 
   <body>
@@ -27,14 +30,14 @@
             <div class="input-group">  
               <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control mr-sm-2" %>  
               <div class="input-group-btn">  
-                <%= button_tag "Search", :class => "btn btn-outline-success my-2 my-sm-0",:name => nil%>  
+                <%= button_tag "", :class => "btn btn-outline-success btn-lg fas fa-search",:name => nil%>
               </div>  
             </div>  
           <% end %>
 
               <% if current_user %>
                 <%= link_to current_user.name, user_path(current_user), :class => "ml-4 mr-4" %>
-                <%= link_to 'Log out', logout_path, method: :delete, :class => "btn btn-outline-danger ml-2"%>
+                <%= link_to 'Log out', logout_path, method: :delete, :class => " btn btn-outline-danger ml-2"%>
               <% else %>
                 <%= link_to 'Login', login_path, :class => "btn btn-outline-info ml-2"%>
               <% end %>

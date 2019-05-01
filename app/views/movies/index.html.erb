@@ -13,9 +13,20 @@
     <% end %>
       <div class="card-body">
         <h5 class="card-title"><%= movie.title %></h5>
-        <p><% movie.reviews.average(:rating).to_i.times do  %>
-     ⭐️
-  <% end %></p>
+        <p>
+        <% if movie.reviews.average(:rating) == nil%>
+          <% Integer(5).to_i.times do  %>
+          <i class="far fa-star"></i>
+          <% end %>
+        <% else %>
+        <% movie.reviews.average(:rating).to_i.times do  %>
+          <i class="fas fa-star"></i>
+          <% end %>
+          <% (Integer(5) - movie.reviews.average(:rating).floor).to_i.times do  %>
+          <i class="far fa-star"></i>
+          <% end %>
+          <% end %>
+        </p>
         <p class="card-text"><%= movie.text %> </p>
 
         <%= link_to 'Show', movie_path(movie), :class => "btn btn-info" %>

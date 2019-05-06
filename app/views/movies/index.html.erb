@@ -29,11 +29,7 @@
         </p>
         <p class="card-text"><%= movie.text %> </p>
 
-        <%= link_to 'Show', movie_path(movie), :class => "btn btn-info" %>
-        <%= link_to 'Edit', edit_movie_path(movie), :class => "btn btn-warning" %>
-        <%= link_to 'Destroy', movie_path(movie), :class => "btn btn-danger",
-                    method: :delete,
-                    data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Show', movie_path(movie), :class => "btn btn-primary stretched-link" %>
       </div>
       <div class="card-footer">
       <small class="text-muted">Last updated <%= distance_of_time_in_words(Time.now, movie.updated_at)%> ago</small>

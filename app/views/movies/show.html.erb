@@ -3,9 +3,15 @@
   <% @average.to_i.times do  %>
       <i class="fas fa-star"></i>
   <% end %>
-  <% @remain.to_i.times do  %>
+  <% if @remain %>
+    <% @remain.to_i.times do  %>
+        <i class="far fa-star"></i>
+    <% end %>
+    <% else %>
+      <% Integer(5).to_i.times do  %>
       <i class="far fa-star"></i>
-  <% end %>
+      <% end %>
+    <% end %>
 </h1>
 
 
